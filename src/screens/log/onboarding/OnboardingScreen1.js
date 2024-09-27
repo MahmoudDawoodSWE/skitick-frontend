@@ -10,15 +10,13 @@ import {
 import { Text } from "react-native-paper";
 import commonStyles from "../../../styles/commonStyles";
 import { useNavigation } from "@react-navigation/native"; // Import navigation hook
-import { selectUser } from "../../../util/selectors";
-import { useSelector } from "react-redux";
+
 
 const { width, height } = Dimensions.get("window");
 
 const OnboardingScreen1 = () => {
   const navigation = useNavigation();
   const buttonRef = useRef(null); // Create a ref for the button
-  console.log(useSelector(selectUser));
   const panResponder = useRef(
     PanResponder.create({
       onMoveShouldSetPanResponder: (evt, gestureState) => {
