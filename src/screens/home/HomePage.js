@@ -7,15 +7,62 @@ import Board from "./components/Board";
 
 const HomePage = ({ navigation }) => {
   const user = useSelector(selectUser);
-
-  // Sample boards data
   const boards = [
-    { id: "1", title: "Board 1", description: "This is the first board" },
-    { id: "2", title: "Board 2", description: "This is the second board" },
-    { id: "3", title: "Board 3", description: "This is the second board" },
+    {
+      id: "1",
+      title: "Board 1",
+      description: "This is the first board",
+      image: require("../../../assets/temp/Rectangle 237 (2).png"),
+      color: "#69E7AA", // Example color
+      stickers: [
+        require("../../../assets/temp/Group 45183.png"), // Sticker 1
+        require("../../../assets/temp/Group 45183.png"), // Sticker 2
+        require("../../../assets/temp/Group 45183.png"), // Sticker 3
+      ],
+      opened: true, // Board 1 is opened
+      progress: 1,
+    },
+    {
+      id: "2",
+      title: "Board 2",
+      description: "This is the second board",
+      image: require("../../../assets/temp/Rectangle 237.png"),
+      color: "#F2D88A", // Example color
+      stickers: [
+        require("../../../assets/temp/Group 45183.png"), // Sticker 1
+        require("../../../assets/temp/Group 45183.png"), // Sticker 2
+      ],
+      opened: false, // Board 2 is closed
+      progress: 1,
+    },
+    {
+      id: "3",
+      title: "Board 3",
+      description: "This is the third board",
+      image: require("../../../assets/temp/Rectangle 237 (1).png"),
+      color: "#74D7D6CC", // Example color
+      stickers: [
+        require("../../../assets/temp/Group 45183.png"), // Sticker 1
+        require("../../../assets/temp/Group 45183.png"), // Sticker 2
+      ],
+      opened: false, // Board 3 is opened
+      progress: 1,
+    },
+    {
+      id: "4",
+      title: "Board 4",
+      description: "This is the fourth board",
+      image: require("../../../assets/temp/Rectangle 237 (3).png"),
+      color: "#ADB4FF", // Example color
+      stickers: [
+        require("../../../assets/temp/Group 45183.png"), // Sticker 1
+        require("../../../assets/temp/Group 45183.png"), // Sticker 2
+      ],
+      opened: false, // Board 4 is closed
+      progress: 1,
+    },
     // Add more boards as needed
   ];
-
   const handleBoardPress = (board) => {
     // Handle board click, navigate to board details page
     navigation.navigate("BoardDetails", { boardId: board.id });
@@ -72,6 +119,7 @@ const styles = StyleSheet.create({
   content: {
     marginTop: 70,
     marginBottom: 90,
+    
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
