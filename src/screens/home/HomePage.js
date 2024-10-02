@@ -64,9 +64,13 @@ const HomePage = ({ navigation }) => {
     // Add more boards as needed
   ];
   const handleBoardPress = (board) => {
-    // Handle board click, navigate to board details page
-    navigation.navigate("BoardDetails", { boardId: board.id });
+    if (board.opened) {
+      navigation.navigate("Board", { screen: "MenuPage" }); // Adjust navigation to go to BoardNavigation and then MenuPage
+    } else {
+      alert("Complete the previous board first!");
+    }
   };
+
 
   return (
     <View style={styles.container}>
@@ -119,7 +123,7 @@ const styles = StyleSheet.create({
   content: {
     marginTop: 70,
     marginBottom: 90,
-    
+
     flex: 1,
     justifyContent: "center",
     alignItems: "center",

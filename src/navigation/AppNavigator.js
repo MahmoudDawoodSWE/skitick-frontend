@@ -12,6 +12,7 @@ import albumIcon from "../../assets/navigation/albumIcon.png";
 import ClickedAlbumIcon from "../../assets/navigation/ClickedAlbumIcon.png";
 import ClickedHomeIcon from "../../assets/navigation/ClickedHomeIcon.png";
 import ClickedProfileIcon from "../../assets/navigation/ClickedProfileIcon.png";
+import BoardNavigation from "./BoardNavigation";
 
 const Tab = createBottomTabNavigator();
 
